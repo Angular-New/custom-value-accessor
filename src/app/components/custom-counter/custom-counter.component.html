@@ -1,0 +1,17 @@
+<div class="counter">
+  <button
+    class="counter-button"
+    (click)="onDecrement()"
+  >minus counter</button>
+  <div class="counter-view">{{ counter }}</div>
+  <button
+    class="counter-button"
+    (click)="onIncrement()"
+  >plus counter</button>
+</div>
+<div class="counter counter-reset">
+  <button
+    class="counter-button"
+    (click)="onReset()"
+  >reset counter</button>
+</div>
