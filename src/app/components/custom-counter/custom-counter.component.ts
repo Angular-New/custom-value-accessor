@@ -21,9 +21,11 @@ export class CustomCounterComponent implements ControlValueAccessor {
   public incrementProp: number | undefined;
 
   public counter = 0;
+  private touched: boolean = false;
 
   public onDecrement(): void {
     if (this.incrementProp) {
+      this.markAsTouched();
       this.counter -= this.incrementProp;
       this.onChange(this.counter); // => уведомляем родительский компонент
     }
@@ -31,6 +33,7 @@ export class CustomCounterComponent implements ControlValueAccessor {
 
   public onIncrement(): void {
     if (this.incrementProp) {
+      this.markAsTouched();
       this.counter += this.incrementProp;
       this.onChange(this.counter); // => уведомляем родительский компонент
     }
@@ -54,5 +57,12 @@ export class CustomCounterComponent implements ControlValueAccessor {
 
   writeValue(counter: number): void {
     this.counter = counter;
+  }
+
+  private markAsTouched(): void {
+    if (!this.touched) {
+      this.onTouched();
+      this.touched = !this.touched;
+    }
   }
 }
