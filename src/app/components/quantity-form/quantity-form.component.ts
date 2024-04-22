@@ -15,6 +15,7 @@ export class QuantityFormComponent implements OnInit {
   ngOnInit(): void {
     this.formQuantity = this.fb.group({
       quantity: new FormControl(60, [Validators.required, Validators.max(100), Validators.min(0)]),
+      name: ['Ivan', Validators.required],
     });
 
     this.formQuantity.valueChanges.subscribe(v => console.log(v));
