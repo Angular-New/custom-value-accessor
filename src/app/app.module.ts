@@ -6,13 +6,15 @@ import { CustomCounterComponent } from './components/custom-counter/custom-count
 import { QuantityFormComponent } from './components/quantity-form/quantity-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
+import { CustomDateInputComponent } from './components/custom-date-input/custom-date-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomCounterComponent,
     QuantityFormComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    CustomDateInputComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@ export class QuantityFormComponent implements OnInit {
     this.formQuantity = this.fb.group({
       quantity: new FormControl(60, [Validators.required, Validators.max(100), Validators.min(0)]),
       name: ['Ivan', Validators.required],
+      date: [new Date(), Validators.required]
     });
 
     this.formQuantity.valueChanges.subscribe(v => console.log(v));
